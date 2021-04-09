@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to our app! This application a dream come true for all the teachers who have been doing the dull work of manually filling the excel sheets with marks of students. In here, you can simply choose a photo of the handwritten marksheet and get the marks in an Excel sheet. Try it out to experience the world of comfort :-)"
+        android:layout_alignParentTop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="50px"
+        android:textColor="@color/black"
+        android:layout_margin="25px"
+        android:id="@+id/welcomeContent"/>
+
+    <Button
+        android:id="@+id/BSelectImage"
+        android:layout_width="800px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_500"
+        android:text="Select Image From Gallery"
+        android:textColor="@android:color/white"
+        android:textSize="70px"
+        android:layout_below="@id/welcomeContent"/>
+
+    <Button
+        android:id="@+id/clickPicture"
+        android:layout_width="800px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_500"
+        android:text="Take a picture"
+        android:textColor="@android:color/white"
+        android:textSize="70px"
+        android:layout_below="@id/BSelectImage"/>
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="800px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_500"
+        android:text="Upload"
+        android:textColor="@android:color/white"
+        android:textSize="70px"
+        android:layout_below="@id/clickPicture"/>
+
+    <Button
+        android:id="@+id/download"
+        android:layout_width="800px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_500"
+        android:text="Download Excel"
+        android:textColor="@android:color/white"
+        android:textSize="70px"
+        android:layout_below="@id/upload"/>
+
+    <ImageView
+        android:id="@+id/IVPreviewImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/download"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"/>
+
+</RelativeLayout>
