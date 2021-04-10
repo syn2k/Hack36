@@ -1,6 +1,7 @@
 package com.example.marksreader;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,8 +9,10 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +21,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     public static final int CAMERA_PERM_CODE = 101;
+    public static final int CAM_REQUEST_CODE = 102;
     Button BSelectImage,cameraBtn;
 
     // One Preview Image
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Camera btn clicked",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this,"Camera btn clicked",Toast.LENGTH_SHORT).show();
                 askCameraPermissions();
             }
         });
@@ -96,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
                     IVPreviewImage.setImageURI(selectedImageUri);
                 }
             }
+            else if(requestCode==CAM_REQUEST_CODE)
+            {
+                Bitmap image= (Bitmap) data.getExtras().get("data");
+                IVPreviewImage.setImageBitmap(image);
+            }
         }
     }
 
@@ -117,6 +126,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void openCamera()
     {
-        Toast.makeText(this,"Camera Open Request",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"Camera Open Request",Toast.LENGTH_SHORT).show();
+        Intent camera=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(camera, CAM_REQUEST_CODE);
     }
+
 }
