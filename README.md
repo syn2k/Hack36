@@ -1,4 +1,4 @@
-# Hack36_2k21
+# आंकड़े
 
 *   Team Name - Coffee N Code
 *   Team Members - <a href="https://github.com/syn2k"> Kshitij Agrawal</a>, <a href="https://github.com/purvag15"> Purva Gautam</a>, <a href="https://github.com/Snigdha-Sharma">Snigdha Sharma</a>
