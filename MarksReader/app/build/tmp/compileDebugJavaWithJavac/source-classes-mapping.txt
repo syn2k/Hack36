@@ -1,6 +1,0 @@
-com/example/marksreader/MainActivity.java
- com.example.marksreader.MainActivity
- com.example.marksreader.MainActivity$1
- com.example.marksreader.MainActivity$2
-com/example/marksreader/BuildConfig.java
- com.example.marksreader.BuildConfig
